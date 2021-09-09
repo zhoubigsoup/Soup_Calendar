@@ -1,6 +1,6 @@
 <?php
 
-$connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+$connection = new mysqli($dataBase['host'],$dataBase['userName'], $dataBase['passWord'], $dataBase['name']);
 if ($connection->connect_error) die($connection->connect_error);
 
 function createTable($name, $query) //create a mysql table

@@ -1,0 +1,10 @@
+<?php
+require_once('functions/function_main.php');
+$request['page']=AntiUnWord($_GET['r']);
+$request['type']=AntiUnWord($_GET['t']);
+if($request['page']==null){
+	require_once('pages/'.$app['indexPage']);
+}else{
+	require_once('pages/'.$request['page'].'.php');
+}
+?>

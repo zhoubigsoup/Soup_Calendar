@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!-- saved from url=(0023)http://tpl.amazeui.org/ -->
 <html class="js cssanimations">
@@ -52,8 +53,7 @@
 <script src='assets/calender/fullcalendar.min.js'></script>
         <!-- Our Custom CSS -->
         <link rel="stylesheet" href="assets/calender/style.css">
-	</head>
-  <body style="margin-top: 5px;margin-left:0px">
+	</head>  <body style="margin-top: 5px;margin-left:0px">
 	  <nav id="sidebar" class="am-topbar-fixed-top " style="margin-top: 60px;height: 100%;box-shadow: 1px 0px 4px rgba(3,0,78,.1);">
 			 <script type="text/javascript">
              $(document).ready(function () {
@@ -70,28 +70,27 @@
 						 <a href="#homeSubmenu" ><i class="am-icon-caret-down     leftbaricon" style="margin-left: 5px"></i>Calendar</a>
 					</li>
                     <li class="active">
-                        <a href="#homeSubmenu" ><i class="am-icon-area-chart   leftbaricon"></i>Dashboard</a>
+                        <a href="?r=calendar" ><i class="am-icon-area-chart   leftbaricon"></i>Dashboard</a>
 
                     </li>
-					<li>
-						 <a href="#homeSubmenu" ><i class="am-icon-calendar    leftbaricon"></i>Schedule</a>
+					<li class="">
+						 <a href="?r=schedule" ><i class="am-icon-calendar    leftbaricon"></i>Schedule</a>
 					</li>
    
                     <li >
 						 <a href="#homeSubmenu" ><i class="am-icon-caret-down     leftbaricon" style="margin-left: 5px"></i>Tasks</a>
 					</li>
-					<li>
+					<li class="">
 						 <a href="#homeSubmenu" ><i class="am-icon-sticky-note    leftbaricon"></i>Task1</a>
 					</li>
-										<li>
+					<li class="">
 						 <a href="#homeSubmenu" ><i class="am-icon-sticky-note    leftbaricon"></i>Task2</a>
 					</li>
    
                 </ul>
 
                 
-            </nav>
-    <header class="am-topbar am-topbar-fixed-top" style="box-shadow: 0 2px 4px rgba(3,27,78,.1);">
+            </nav> <header class="am-topbar am-topbar-fixed-top" style="box-shadow: 0 2px 4px rgba(3,27,78,.1);">
       <div class="am-container">
         <h1 class="am-topbar-brand app-logo">
           <a href="http://tpl.amazeui.org/index.html" style="margin-top:-10">
@@ -104,43 +103,43 @@
         <div class="am-collapse am-topbar-collapse" id="collapse-head">
           <ul class="am-nav am-nav-pills am-topbar-nav" style="width:70%">
             <li data-type="index" class='am-active'>
-              <a href="http://tpl.amazeui.org/index.html">Home</a></li>
+              <a href="http://calendar.46c46.com">Home</a></li>
             <li data-type="developer" class="">
-              <a href="http://tpl.amazeui.org/developer.html">Calendars</a></li>
+              <a href="#">Calendars</a></li>
             <li class="">
-              <a href="http://ask.amazeui.org/">Schedule</a></li>
-            <li >
+              <a href="#">Schedule</a></li>
+            <li class="">
               <a>My Task</a>
             </li>
-            <li class="pull-right">
-              <div class="am-dropdown" data-am-dropdown>
-                <button type="button" class="btn btn-dark am-dropdown-toggle" style="background-color:#fff;border-color: #fff;color:#3E3E3E;height:60px" aria-haspopup="true" aria-expanded="false">
-                   <img class="img-circle" style="width: 40px;height:40px" src="theme\default\Amaze UI_files\feng.jpg">  bigsoup
-                  <span class="caret"></span></button>
-                <ul class="am-dropdown-content">
-                  <li class="am-dropdown-header">bigsoup</li>
-                  <li>
-                    <div class="am-progress am-progress-striped am-progress-md am-active " style="margin-bottom: 1rem">
-                      <div class="am-progress-bar am-progress-bar-secondary" style="width: 57%">XP：30/50</div></div>
-                  </li>
-                  <li>
-                    <a href="#">Dashboard</a></li>
-                  <li>
-                    <a href="#">Message</a></li>
-                  <li class="am-divider"></li>
-                  <li>
-                    <a href="#">Logout</a></li>
-                </ul>
-              </div>
-            </li>
-          </ul>
+                                 			<li class="pull-right"><div class="am-dropdown" data-am-dropdown> <button type="button" class="btn btn-dark am-dropdown-toggle"  style="background-color:rgba(0,0,0,0);border-color: rgba(0,0,0,0);color:#999999;height:60px" aria-haspopup="true" aria-expanded="false">
+  <img class="img-circle" style="width: 40px;height:40px" src="theme/default/Amaze%20UI_files/feng.jpg">  bigsoup  <span class="caret"></span>
+  </button>
+			 <ul class="am-dropdown-content">
+    <li class="am-dropdown-header">bigsoup</li>
+	<li><div class="am-progress am-progress-striped am-progress-md am-active "style="margin-bottom: 1rem">
+  <div class="am-progress-bar am-progress-bar-secondary"  style="width: 40%">40/100</div>
+</div></li>
+			
+    <li><a href="profile.php">Profile</a></li>
+    <li><a style="cursor:pointer"onclick=" layer.open({
+    type: 2,
+    title: 'Inbox',
+    maxmin: true,
+    area: ['90%', '90%'],
+    content: ['index.php?r=message'],
+    
+  }); $('#msgspan').addClass('hidden');$('#namespan').addClass('hidden');">Inbox </a></li>
+    <li class="am-divider"></li>
+    <li><a href="index.php?r=logout">Logout</a></li>
+			</ul></div></li>          </ul>
         </div>
       </div>
       </div>
     </header>
-		    <div style="width:300px;height:0px;background-color: red;display: inline-block" ></div>
+
+   <div style="width:300px;height:0px;background-color: red;display: inline-block" ></div>
 	
-    <div class="container" style="margin-top:10px;margin-top: 20px;display: inline-block;max-width: 600px;">
+    <div class="container" style="margin-top:50px;display: inline-block;max-width: 600px;">
 
      <script>
 
@@ -148,29 +147,16 @@
 
     $('#calendar').fullCalendar({
       header: false,
-
-      defaultDate: '2018-03-12',
       navLinks: true, // can click day/week names to navigate views
       editable: false,
 	  height: 350,
 	  width:400,
-	  scrollTime:"08:00:00",
+	  scrollTime:"07:00",
       eventLimit: false, // allow "more" link when too many events
 	  defaultView: 'agendaDay',
       events: [
         
-	        {
-          title: '起床',
-          start: '2018-03-12 09:00:00',
-          end: '2018-03-12 09:27:16',
-		  color:"#FF9800"
-        },
-	        {
-          title: '拉屎',
-          start: '2018-03-12 09:33:00',
-          end: '2018-03-12 10:26:06',
-		  color:"#FF5722"
-        },      ]
+	                ]
     });
 	  
 $('.fc-widget-header').addClass('hidden');
@@ -203,13 +189,13 @@ $('.fc-day-grid').addClass('hidden');
 		   <div class="circles">
 		   		<div class="dashboardball am-circle am-inline-block">
 					<div class="dashboardhalfcircle" ></div>
-					<span class="dashboardnumber" >5</span>
+					<span class="dashboardnumber" >7</span>
 					<span class="dashboardcircletext" >Events</span>
 					
 		  		</div>
 		   		<div class="dashboardball am-circle am-inline-block">
 					<div class="dashboardhalfcircle" ></div>
-					<span class="dashboardnumber" >2</span>
+					<span class="dashboardnumber" >0</span>
 					<span class="dashboardcircletext" >Tasks</span>
 					
 		  	    </div>
@@ -221,39 +207,45 @@ $('.fc-day-grid').addClass('hidden');
 		  	    </div>
 		   </div>
 		   <span class="badge am-badge-success dashboardspan">Timezone:<span class="dashboarddetail" >Holiday</span></span>
-		   <span class="badge am-badge-primary dashboardspan">Today's task:<span class="dashboarddetail" >3</span></span>
-		   <span class="badge badge-success dashboardspan">Finished task:<span class="dashboarddetail" >2</span></span>
+		   <span class="badge am-badge-primary dashboardspan">Today's task:<span class="dashboarddetail" >0</span></span>
+		   <span class="badge badge-success dashboardspan">Finished task:<span class="dashboarddetail" >3</span></span>
 	
 	   </div>
 	   	   <div class="col-sm-1 col-xs-2 dashboardfunction">
-			   <button class="am-btn am-btn-lightblue dashboardbtn" style="margin-bottom: 5px;"><i class="am-icon-plus dashboardicon"></i>  Add task</button>
-			   <button class="am-btn am-btn-lightblue dashboardbtn" style="margin-bottom: 5px;"><i class="am-icon-plus dashboardicon"></i>  Add event</button>
+			   <button class="am-btn am-btn-lightblue dashboardbtn" onclick="layer.open({
+    type: 2,
+    title: 'Add task',
+    maxmin: true,
+    area: ['90%', '90%'],
+    content: ['?r=addtask'],
+    
+  }); $('#msgspan').addClass('hidden');$('#namespan').addClass('hidden');" style="margin-bottom: 5px;"><i class="am-icon-plus dashboardicon"></i>  Add task</button>
+			   <button class="am-btn am-btn-lightblue dashboardbtn" onclick="layer.open({
+    type: 2,
+    title: 'Add event',
+    maxmin: true,
+    area: ['90%', '90%'],
+    content: ['?r=addevent'],
+    
+  }); $('#msgspan').addClass('hidden');$('#namespan').addClass('hidden');"  style="margin-bottom: 5px;"><i class="am-icon-plus dashboardicon"></i>  Add event</button>
 		   
 		   </div>
 	   </div>
    </div>
-   <div id="tasks" class="col-md-6 col-sm-1">
-      <div class="bartitle">
-         Tasks
-      </div>
-      <div class="taskbar">
-         <img class="taskbarimg img-circle am-inline-block" src="assets/images/flat5.jpg" /> 
-         <div class="am-inline-block">
-            <span class="taskbartext">Memorize english words</span> 
-            <div> 
-               <span class="am-badge am-badge-success am-round " onclick="window.open('forumManage.php?type=edit&amp;fid=11');"><i class="am-icon-pencil"></i></span> 
-            </div>
-         </div>
-      </div>
-      <div class="taskbar"></div>
-   </div>
-   <div class="col-md-6 col-sm-1">
+	   <div class="col-md-6 col-sm-1">
       <div class="bartitle">
          Events
       </div>
       <div id="calendar"></div>
    </div>
+	   <div id="tasks" class="col-md-6 col-sm-1">
+      <div class="bartitle">
+         Tasks
+      </div>
+        </div>
+
 </div>
+
 
   </body>
 

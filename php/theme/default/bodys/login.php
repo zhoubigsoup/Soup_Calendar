@@ -9,7 +9,7 @@
           <h1 style="height:60px" class=" hidden-xs "></h1>
     <p style="font-size:24px;margin-top:30px">Login</p>
     <hr>
-    <form method="post" class="am-form" action="login.php">
+    <form method="post" class="am-form" action="?r=login">
       
        
 <div class="am-form-group <?php echo $ArrayData[0][0];?>">

@@ -1,7 +1,7 @@
 <?php
-require_once '/functions/function_main.php';
+
 if (!isset($_SESSION['username'])) die('<script>url="login.php";window.location.href=url;</script>');
-require_once '/theme/default/heads/calendarhead.php';
+require_once 'theme/default/heads/calendarhead.php';
 $username=$_SESSION['username'];
 $namewarning = $detailwarning = $starttimewarning = $endtimewarning = $imagewarning = InputWarningText("");
 if ($_POST['name'] != null) {
@@ -26,11 +26,11 @@ if ($_POST['name'] != null) {
 	} else{
 		
 		queryMysql("INSERT INTO tasks (name,detail,starttime,endtime,image,status,user)VALUES('$name','$detail','$starttime','$endtime','$image','not-doing','$username')");
-		die("<script>layer.msg('add task successed', {icon: 1},function(){url='calendar.php';parent.layer.close(index);});</script>");
+		die("<script>layer.msg('add task successfully', {icon: 1},function(){url='calendar.php';parent.layer.close(index);});</script>");
 		
 	}
 }
 
 
-require_once '/theme/default/bodys/addtask.php';
+require_once 'theme/default/bodys/addtask.php';
 ?>

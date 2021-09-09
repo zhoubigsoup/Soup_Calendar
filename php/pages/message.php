@@ -2,9 +2,8 @@
 	 <div id="content" style="">
   
 <?php
-
-require_once '/functions/function_main.php';
-require_once("theme/default/heads/head1.php");
+$html="";
+require_once("theme/default/heads/calendarhead.php");
 if (!isset($_SESSION['username'])) die('<script>url="login.php";window.location.href=url;</script>');
 $username=$_SESSION['username'];
 GetMSG();

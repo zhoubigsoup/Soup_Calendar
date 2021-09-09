@@ -58,7 +58,7 @@ function returnToolbarLogin(){
 	  </div></li>
 			<li style="width:200px;float: right;margin-top:10px"class="text-right hidden-xs">
 				<div class="col-lg-2" style="padding-left: 130px;padding-right: 0px;width:200px">
-	  <button onclick="window.location.href='login.php';" class="button button-primary button-pill "style="width:95.99px">Login</button></div>
+	  <button onclick="window.location.href='?r=login';" class="button button-primary button-pill "style="width:95.99px">Login</button></div>
 			</li>
 EOT;
 		return($LoginResource);
@@ -98,11 +98,11 @@ EOT;
     title: 'Inbox',
     maxmin: true,
     area: ['90%', '90%'],
-    content: ['message.php'],
+    content: ['?r=message'],
     
   }); $('#msgspan').addClass('hidden');$('#namespan').addClass('hidden');">Inbox $msgs</a></li>
     <li class="am-divider"></li>
-    <li><a href="/logout.php">Logout</a></li>
+    <li><a href="?r=logout">Logout</a></li>
 			</ul></div></li>
 EOT;
 		return($LoginResource);

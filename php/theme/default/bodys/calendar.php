@@ -1,7 +1,7 @@
 
    <div style="width:300px;height:0px;background-color: red;display: inline-block" ></div>
 	
-    <div class="container" style="margin-top:10px;margin-top: 20px;display: inline-block;max-width: 600px;">
+    <div class="container" style="margin-top:50px;display: inline-block;max-width: 600px;">
 
      <script>
 
@@ -13,7 +13,7 @@
       editable: false,
 	  height: 350,
 	  width:400,
-	  scrollTime:"08:00:00",
+	  scrollTime:"<?php echo $_SESSION['defaultTime'];?>",
       eventLimit: false, // allow "more" link when too many events
 	  defaultView: 'agendaDay',
       events: [
@@ -69,8 +69,8 @@ $('.fc-day-grid').addClass('hidden');
 		  	    </div>
 		   </div>
 		   <span class="badge am-badge-success dashboardspan">Timezone:<span class="dashboarddetail" >Holiday</span></span>
-		   <span class="badge am-badge-primary dashboardspan">Today's task:<span class="dashboarddetail" >3</span></span>
-		   <span class="badge badge-success dashboardspan">Finished task:<span class="dashboarddetail" >2</span></span>
+		   <span class="badge am-badge-primary dashboardspan">Today's task:<span class="dashboarddetail" ><?php echo $calendar['totaltasks'];?></span></span>
+		   <span class="badge badge-success dashboardspan">Finished task:<span class="dashboarddetail" ><?php echo $calendar['finished_tasks'];?></span></span>
 	
 	   </div>
 	   	   <div class="col-sm-1 col-xs-2 dashboardfunction">
@@ -79,7 +79,7 @@ $('.fc-day-grid').addClass('hidden');
     title: 'Add task',
     maxmin: true,
     area: ['90%', '90%'],
-    content: ['addtask.php'],
+    content: ['?r=addtask'],
     
   }); $('#msgspan').addClass('hidden');$('#namespan').addClass('hidden');" style="margin-bottom: 5px;"><i class="am-icon-plus dashboardicon"></i>  Add task</button>
 			   <button class="am-btn am-btn-lightblue dashboardbtn" onclick="layer.open({
@@ -87,26 +87,28 @@ $('.fc-day-grid').addClass('hidden');
     title: 'Add event',
     maxmin: true,
     area: ['90%', '90%'],
-    content: ['addevent.php'],
+    content: ['?r=addevent'],
     
   }); $('#msgspan').addClass('hidden');$('#namespan').addClass('hidden');"  style="margin-bottom: 5px;"><i class="am-icon-plus dashboardicon"></i>  Add event</button>
 		   
 		   </div>
 	   </div>
    </div>
-   <div id="tasks" class="col-md-6 col-sm-1">
-      <div class="bartitle">
-         Tasks
-      </div>
-     <?php echo $calendar['tasks'];?>
-   </div>
-   <div class="col-md-6 col-sm-1">
+	   <div class="col-md-6 col-sm-1">
       <div class="bartitle">
          Events
       </div>
       <div id="calendar"></div>
    </div>
+	   <div id="tasks" class="col-md-6 col-sm-1">
+      <div class="bartitle">
+         Tasks
+      </div>
+     <?php echo $calendar['tasks'];?>
+   </div>
+
 </div>
+
 
   </body>
 

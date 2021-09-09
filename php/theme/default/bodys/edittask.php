@@ -43,19 +43,19 @@ myField.focus();
   
        <div class="caption"> 
        
-               <form class="am-form am-form-horizontal" method="post" action="?r=addtask"> 
+               <form class="am-form am-form-horizontal" method="post" action="?r=edittask"> 
 			<div class="am-form-group hidden"> 
 			 
           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">tid</label> 
           <div class="am-u-sm-10"> 
-           <input type="text" id="doc-ipt-3" name="id" value="" > 
+           <input type="text" id="doc-ipt-3" name="tid" value="<?php echo $forum['tid'];?>" > 
           </div> 
          </div> 
          <div class="am-form-group <?php echo $namewarning['class'];?>"> 
 			 <?php echo $namewarning['text'];?>
 			           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Name</label> 
           <div class="am-u-sm-10"> 
-           <input type="text" id="doc-ipt-3" name="name" value="<?php echo $name;?>" placeholder="Please type the task name"> 
+           <input type="text" id="doc-ipt-3" name="name" value="<?php echo $forum['name'];?>" placeholder="Please type the task name"> 
           </div> 
          </div> 
 
@@ -78,7 +78,7 @@ myField.focus();
             <button id="h3" class="button button-circle button-tiny" style="margin-bottom:5px" onclick="insertAtCursor(document.getElementById('text'),'[h5]Small text[/h5]')" type="button"> <img src="/assets/tb/11.png"> </button> 
 			<button id="br" class="button button-circle button-tiny" style="margin-bottom:5px" onclick="insertAtCursor(document.getElementById('text'),'[br\]')" type="button"> br</button> 
            </div> 
-           <textarea class="" rows="10" id="text" name="detail"><?php echo $detail;?></textarea> 
+           <textarea class="" rows="10" id="text" name="detail"><?php echo $forum['detail'];?></textarea> 
           </div> 
          </div> 
 			<div class="am-form-group <?php echo $namewarning['class'];?>"> 
@@ -95,6 +95,11 @@ $handle = opendir('./assets/images'); //当前目录
    list($filesname,$kzm)=explode(".",$file);//获取扩展名
     if($kzm=="png" or $kzm=="jpg" or $kzm=="gif" or $kzm=="jpeg") { //文件过滤
      if (!is_dir('./'.$file)) { //文件夹过滤
+		 if($forum['image']=="assets/images/$file"){
+			 $checked="checked";
+		 }else{
+			 $checked="";
+		 }
        echo <<<EOT
 	   <li>
 			
@@ -102,7 +107,7 @@ $handle = opendir('./assets/images'); //当前目录
             <p>
               <img src="./assets/images/$file"  alt="$i"/>
                 <h3 class="am-gallery-title"> <label >
-        <input type="radio"  value="assets/images/$file" name="image" > Pick this
+        <input type="radio"  value="assets/images/$file" name="image"$checked > Pick this
       </label></h3>
                 
             </p>
@@ -125,7 +130,7 @@ EOT;
 				<?php echo $starttimewarning['text'];?>
 			           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Start time</label> 
           <div class="am-u-sm-10"> 
-           <input value="<?php echo date('YY-mm-dd') ;?>" name="starttime" id="Server_endtime" type="date">
+           <input value="<?php echo $forum['starttime'];?>" name="starttime" id="Server_endtime" type="date">
           </div> 
          </div> 
 			
@@ -133,7 +138,7 @@ EOT;
 				<?php echo $endtimewarning['text'];?>
 			           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Due time</label> 
           <div class="am-u-sm-10"> 
-           <input value="<?php echo date('y-m-d h:i:s',time()) ;?>" name="endtime" id="Server_endtime" type="date">
+           <input value="<?php echo $forum['endtime'];?>" name="endtime" id="Server_endtime" type="date">
           </div> 
          </div> 
 			 

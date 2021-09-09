@@ -15,11 +15,11 @@
 						 <a href="#homeSubmenu" ><i class="am-icon-caret-down     leftbaricon" style="margin-left: 5px"></i>Calendar</a>
 					</li>
                     <li class="<?php echo $LeftbarAct['Dashboard'];?>">
-                        <a href="dashboard.php" ><i class="am-icon-area-chart   leftbaricon"></i>Dashboard</a>
+                        <a href="?r=calendar" ><i class="am-icon-area-chart   leftbaricon"></i>Dashboard</a>
 
                     </li>
 					<li class="<?php echo $LeftbarAct['schedule'];?>">
-						 <a href="schedule.php" ><i class="am-icon-calendar    leftbaricon"></i>Schedule</a>
+						 <a href="?r=schedule" ><i class="am-icon-calendar    leftbaricon"></i>Schedule</a>
 					</li>
    
                     <li >

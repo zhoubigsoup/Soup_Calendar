@@ -39,11 +39,12 @@ myField.value += myValue;
 myField.focus();
 }
 } 
+
 </script> 
   
        <div class="caption"> 
        
-               <form class="am-form am-form-horizontal" method="post" action="addevent.php"> 
+               <form class="am-form am-form-horizontal" method="post" action="?r=addevent"> 
 			<div class="am-form-group hidden"> 
 			 
           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">tid</label> 
@@ -59,18 +60,18 @@ myField.focus();
           </div> 
          </div> 
 
-			<div class="am-form-group<?php echo $eventtimewarning['class'];?>"> 
+			<div class="am-form-group<?php echo $eventtimewarning['class'];?>"id="eventdate"> 
 				<?php echo $eventtimewarning['text'];?>
-			           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Date</label> 
+			           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Event date</label> 
           <div class="am-u-sm-10"> 
-           <input value="<?php echo $eventdate;?>" name="date" id="date" type="date">
+           <input value="<?php if($event!= null){echo $event;}else{echo date("Y-m-d");}?>" name="eventdate" id="date" type="date">
           </div> 
          </div> 
 			<div class="am-form-group <?php echo $starttimewarning['class'];?>"> 
 				<?php echo $starttimewarning['text'];?>
 			           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Start time</label> 
           <div class="am-u-sm-10"> 
-           <input value="<?php echo date('YY-mm-dd') ;?>" name="starttime" id="Server_endtime" type="time">
+           <input value="09:00" name="starttime" id="Server_endtime" type="time">
           </div> 
          </div> 
 			
@@ -78,7 +79,7 @@ myField.focus();
 				<?php echo $endtimewarning['text'];?>
 			           <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">end time</label> 
           <div class="am-u-sm-10"> 
-           <input value="<?php echo date('y-m-d h:i:s',time()) ;?>" name="endtime" id="Server_endtime" type="time">
+           <input value="10:00" name="endtime" id="Server_endtime" type="time">
           </div> 
          </div> 
 		<div class="am-form-group "> 
@@ -102,6 +103,73 @@ myField.focus();
 
           </div> 
          </div>  
+				 
+				   <div class="am-form-group "> 
+			 
+          <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Repeat</label> 
+          <div class="am-u-sm-10 repeat2"> 
+
+        <input type="checkbox"id="repeatbox"value="true" name="isrepeat" hidden>
+
+			  <button type="button" onclick='
+		$("#repeatdiv").attr("disabled",false); 
+		$("#repeatbox").attr("checked",true); 
+        $("#repeatdiv").show("slow");  
+		$(".repeats").show("slow");  
+		$("#eventdate").hide("slow"); 
+		$(".repeat2").hide("slow");
+											 
+       ' class="am-btn am-btn-blue am-btn-xs">Enable</button>
+          </div> 
+ <div class="am-u-sm-10 repeats" hidden> 
+	 <button type="button" onclick=' 
+		$("#repeatdiv").attr("disabled",true); 
+		$("#repeatbox").attr("checked",false); 
+        $("#repeatdiv").hide("slow");  
+		$(".repeats").hide("slow");  
+		$("#eventdate").show("slow"); 
+		$(".repeat2").show("slow"); 
+       ' class="am-btn am-btn-danger am-btn-xs">Disable</button>
+          </div> 
+          <div class="am-u-sm-10 "id="repeatdiv" hidden> 
+           	 <label class="am-checkbox-inline">
+        		<input type="checkbox" value="mon" name="repeat-week[]"> Mon
+             </label>
+			  <label class="am-radio-inline">
+        		<input type="checkbox" value="tue" name="repeat-week[]"> Tue
+             </label>	
+			  <label class="am-radio-inline">
+        		<input type="checkbox" value="wed" name="repeat-week[]"> Wed
+             </label>	
+			  <label class="am-radio-inline">
+        		<input type="checkbox" value="thu" name="repeat-week[]"> Thu
+             </label>	
+			  <label class="am-radio-inline">
+        		<input type="checkbox" value="fri" name="repeat-week[]"> Fri
+             </label>	
+			  <label class="am-radio-inline">
+        		<input type="checkbox" value="sat" name="repeat-week[]"> Sat
+             </label>	
+			  <label class="am-radio-inline">
+        		<input type="checkbox" value="sun" name="repeat-week[]"> Sun
+             </label>	
+      
+	  
+
+          </div> 
+         </div>  
+		 <div class="am-form-group repeats" hidden>
+      <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Repeat-Start</label>
+					<div class="am-u-sm-10"> 
+      <input  value="<?php if($repeatstart!= null){echo $repeatstart;}else{echo date("Y-m-d");}?>"name="repeatstart" id="Server_endtime" type="date">
+					</div>
+    </div>
+		 <div class="am-form-group repeats" hidden>
+      <label for="doc-ipt-3" class="am-u-sm-2 am-form-label">Repeat-End</label>
+					<div class="am-u-sm-10"> 
+      <input  value="<?php if($repeatend!= null){echo $repeatend;}else{echo date('Y-m-d',strtotime( " +1 day",strtotime(date("Y-m-d"))));}?>"name="repeatend" id="Server_endtime" type="date">
+					</div>
+    </div>
          <div class="am-form-group"> 
           <div class="am-u-sm-10 am-u-sm-offset-2"> 
           			   <button class="am-btn am-btn-lightblue" type="submit">Submit</button>

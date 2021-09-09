@@ -102,6 +102,10 @@ a, a:hover, a:focus {
 	margin-left: 15px;
 	padding-left: 10px;
 	padding-top: 10px;
+	transition: all .3s;
+}
+.dashboard:hover{
+	box-shadow: 0 1px 7px rgba(3,27,78,.2);
 }
 .circlesa{
 	width: 400px;
@@ -130,8 +134,12 @@ a, a:hover, a:focus {
 	height: 100px;
 	margin-right: 10px;
 	box-shadow: 0 2px 7px rgba(3,27,78,.2);
-	position: relative
+	position: relative;
+	transition: all .3s;
 	
+}
+.dashboardball:hover{
+	box-shadow: 0 5px 20px rgba(3,27,78,.3);
 }
 .dashboardhalfcircle{
 	top:50px;
